@@ -1,0 +1,28 @@
+<div style="width: 800px; height: 470px; margin-left: 350px" >
+
+    <form name="login" autocomplete="off" style="font-size: 15px; margin-top: 150px">
+        <div class="form-group">
+            Email
+            <input type="text" name="email" required ng-model="obj.email" ng-pattern="/\S+@\S+\.\S+/" class="form-control">
+            <span
+                    ng-show='login.email.$dirty&&login.email.$invalid||login.email.$dirty&&login.email.$error.pattern'>
+        Please enter valid email, (eg: anything@anything.domain)
+
+  </span>
+
+        </div>
+        <div class="form-group">
+            Password
+            <input type="Password" name="fname" required ng-model="obj.password" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/"
+                   class="form-control">
+            <span
+                    ng-show='login.fname.$dirty&&login.fname.$invalid||login.fname.$dirty&&login.fname.$error.pattern'>
+        Only alphabhets
+
+  </span>
+        </div>
+
+        <input type="submit" ng-disabled="login.$invalid" ng-click="add(obj)" data-dismiss="modal" value="Login">
+
+    </form>
+</div>

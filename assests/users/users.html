@@ -1,0 +1,307 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="nav nav-tabs nav-tabs-inverse nav-justified nav-justified-mobile" data-sortable-id="index-2" style="color: blue">
+                <!-- <li class="first" ng-class="{'active':header=='Manage User'}" ng-if="user.indexOf('ManageUser')>-1"><a ng-href="#header/manageUsers">Manage Users</a> -->
+                <li class="first active">
+                    <a href="#!/users" style="height: 40px">Users</a>
+                </li>
+                <li class="first active">
+                    <a href="#!/vendors" style="height: 40px">Vendors</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<ul class="nav navbar-nav side-nav">
+    <li class="prodata">
+        <div class="profile-img">
+            <div class="left-img">
+                <img src="images/Traccar.jpg" style="width: 225px;height: 250px">
+            </div>
+            <div class="rightdes">
+                <h3 class="title-s">Welcome Admin</h3>
+                <div class="sub-title ng-binding"></div>
+                <div class="logout">
+                    <a style="cursor:crosshair;" ng-click="logout()"></a>
+                </div>
+            </div>
+        </div>
+    </li>
+    <!--<li>-->
+    <!--<a style="cursor:pointer;"href="#!/adminProfile">ADMIN PROFILE</a>-->
+    <!--</li>-->
+    <li>
+        <a style="cursor:pointer;" href="#!/manageUser" class="">Log Out</a>
+    </li>
+    <li>
+        <a style="cursor:pointer;" href="#!/addUser" class="">ADD USER</a>
+    </li>
+    <li>
+        <a style="cursor:pointer;" href="#!/addVendor" class="">ADD VENDOR</a>
+    </li>
+
+
+
+    <!--  <li>
+         <a>BLOCK USER</a>
+     </li>
+     <li>
+         <a> CREATE REPORT</a>
+     </li>  -->
+</ul>
+<!--<div class="wrapper">-->
+    <!--<div class="col_third">-->
+        <!--<div class="hover panel">-->
+            <!--<div class="front">-->
+                <!--<div class="box1">-->
+                    <!--<p>Total Users</p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="back">-->
+                <!--<div class="box2">-->
+                    <!--<p>1000</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="col_third">-->
+        <!--<div class="hover panel">-->
+            <!--<div class="front">-->
+                <!--<div class="box1">-->
+                    <!--<p>Personal Users</p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="back">-->
+                <!--<div class="box2">-->
+                    <!--<p>500</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="col_third end">-->
+        <!--<div class="hover panel">-->
+            <!--<div class="front">-->
+                <!--<div class="box1">-->
+                    <!--<p>Business Users</p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="back">-->
+                <!--<div class="box2">-->
+                    <!--<p>500</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="col_third">-->
+        <!--<div class="hover panel">-->
+            <!--<div class="front">-->
+                <!--<div class="box1">-->
+                    <!--<p>Total Winners</p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="back">-->
+                <!--<div class="box2">-->
+                    <!--<p>50</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="col_third">-->
+        <!--<div class="hover panel">-->
+            <!--<div class="front">-->
+                <!--<div class="box1">-->
+                    <!--<p>Cash Winners</p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="back">-->
+                <!--<div class="box2">-->
+                    <!--<p>15</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="col_third end">-->
+        <!--<div class="hover panel">-->
+            <!--<div class="front">-->
+                <!--<div class="box1">-->
+                    <!--<p>Coupon Winners</p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="back">-->
+                <!--<div class="box2">-->
+                    <!--<p>35</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="col_third ">-->
+        <!--<div class="hover panel">-->
+            <!--<div class="front">-->
+                <!--<div class="box1">-->
+                    <!--<p>Block Users</p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="back">-->
+                <!--<div class="box2">-->
+                    <!--<p>5</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<br><div style="clear: both"></div>
+
+<input type="text" ng-model="strSearch.firstname" placeholder="Search By Name">
+<input type="text" ng-model="strSearch.region" placeholder="Search By Region">
+
+<table class="table table-bordered table-hover table-condensed table-striped table-responsive col-lg-offset-3" style="width: auto;margin-top: 25px;font-size: 16px">
+    <tr>
+        <td class="btn-primary">First Name</td>
+        <td class="btn-primary">Last Name</td>
+        <td class="btn-primary">Email</td>
+        <td class="btn-primary">Telephone No</td>
+        <td class="btn-primary">Region</td>
+        <td class="btn-primary">Status</td>
+
+        <td class="btn-primary" colspan="3">Action</td>
+
+
+    </tr>
+    <tr ng-repeat="user in users|filter:strSearch track by $index">
+        <td>{{user.firstname}}</td>
+        <td>{{user.lastname}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.telephone_no}}</td>
+        <td>{{user.region}}</td>
+        <td>{{user.blocked}}</td>
+
+        <td ng-click="saveUser(user)" class="action" data-toggle="modal" data-target="#confirmation"><a href="" ></a>{{user.status}}</td>
+
+        <td ng-click="editUser(user)" class="action" data-toggle="modal" data-target="#details"><a href="">Edit</a></td>
+
+
+    </tr>
+</table>
+
+
+
+
+
+<div id="confirmation" role="dialog" class="modal fade" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content" style="font-size: 15px">
+            <div style="background-color: greenyellow;height: 30px"></div>
+            <h1 class="modal-title" style="font-size: 17px;margin-top: 10px">Are you sure to perform this action?</h1>
+
+            <div class="modal-body">
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="blockUser(user)">Yes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="details" role="dialog" class="modal fade" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content" style="font-size: 15px">
+            <div class="modal-content" style="font-size: 15px">
+                <div style="background-color: lightgreen;height: 30px"></div>
+
+                <h1 class="modal-title" style="font-size: 17px">Edit User Details</h1>
+
+                <div class="modal-body">
+
+                    <form name="edit" autocomplete="off">
+                        <div class="form-group">
+                            First Name
+                            <input type="text" name="fname" required ng-model="obj.firstname" ng-pattern="/^[a-zA-Z]{3,30}$/"
+                                   class="form-control">
+                            <span
+                                    ng-show='edit.fname.$dirty&&edit.fname.$invalid||edit.fname.$dirty&&edit.fname.$error.pattern'>
+        Only alphabets allowed  3 to 30
+
+  </span>
+                        </div>
+                        <div class="form-group">
+                            Last Name
+                            <input type="text" name="lname" required ng-model="obj.lastname" ng-pattern="/^[a-zA-Z]{3,30}$/"
+                                   class="form-control">
+                            <span
+                                    ng-show='edit.lname.$dirty&&edit.lname.$invalid||edit.lname.$dirty&&edit.lname.$error.pattern'>
+        Only alphabets allowed, Characters 3 to 30
+
+  </span>
+                        </div>
+
+                        <div class="form-group">
+                            Contact Number
+
+                            <input type="number" name="contact" required ng-model="obj.telephone_no" ng-pattern="/^[0-9]{10,14}$/"
+                                   class="form-control">
+                            <span
+                                    ng-show='edit.contact.$dirty&&edit.contact.$invalid||edit.contact.$dirty&&edit.contact.$error.pattern'>
+    Please enter 10-14 digit contact no, only number is allowed in this field
+  </span>
+
+                        </div>
+                        <div class="form-group">
+                            Region
+
+
+                            <select id="region" required ng-model="obj.region" class="form-control">
+                                <option value="">Please choose Region</option>
+                                <option>north</option>
+                                <option>south</option>
+                                <option>east</option>
+                                <option>west</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            Country
+
+                            <select id="country" ng-model="obj.country" required ng-focus="getData()" ng-click="getData()"
+                                    ng-change="getStates(obj.country)" class="form-control"
+                            >
+                                <option value="">Please choose Country</option>
+
+
+                                <option ng-repeat="count in country">{{count.name}}</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            State
+
+
+                            <select id="state" required ng-disabled="!obj.country" ng-model="obj.state" class="form-control">
+                                <option value="">Please choose State</option>
+                                <option ng-repeat="stat in states">{{stat}}</option>
+                            </select>
+                        </div>
+
+                        <input type="submit" ng-disabled="edit.$invalid" ng-click="add(obj)" data-dismiss="modal" value="Edit user">
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
