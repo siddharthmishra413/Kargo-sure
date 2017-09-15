@@ -245,10 +245,69 @@ module.exports = {
             }
         })
 
+    },
+    getUserData: (req, res) => {
+        let blocked = req.query.blocked;
+        if (blocked == 1) {
+            User.aggregate({
+                    $match: {
+                        blocked: true
+                    }
+                },
+                {
+                    $group: {
+                        _id: null,
+                        count: {$sum: 1}
+                    }
+                }, (err, success) => {
+                    if (err) {
+                        console.log(err);
+                        res.status(400).send({
+                            "responseCode": 400,
+                            "responseMessage": "Unsuccessful",
+                            "response": err.message
+                        });
+                    }
+                    else {
+                        console.log("**************", success);
+                        res.status(200).send({
+                            "responseCode": 200,
+                            "responseMessage": "Successful",
+                            "response": success
+                        });
+                    }
+                })
+        }
+        else {
+            User.aggregate(
+                {
+                    $group: {
+                        _id: null,
+                        count: {$sum: 1}
+                    }
+                }, (err, success) => {
+                    if (err) {
+                        console.log(err);
+                        res.status(400).send({
+                            "responseCode": 400,
+                            "responseMessage": "Unsuccessful",
+                            "response": err.message
+                        });
+                    }
+                    else {
+                        console.log("**************", success);
+                        res.status(200).send({
+                            "responseCode": 200,
+                            "responseMessage": "Successful",
+                            "response": success
+                        });
+                    }
+                })
+        }
     }
 
 
-    // createReport: (req, res) => {
+// createReport: (req, res) => {
     //
     //     require("jsreport").render("<h1>Hello world</h1>").then(function (out) {
     //         //pipe pdf with "Hello World"

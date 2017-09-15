@@ -4,10 +4,10 @@
             <ul class="nav nav-tabs nav-tabs-inverse nav-justified nav-justified-mobile" data-sortable-id="index-2" style="color: blue">
                 <!-- <li class="first" ng-class="{'active':header=='Manage User'}" ng-if="user.indexOf('ManageUser')>-1"><a ng-href="#header/manageUsers">Manage Users</a> -->
                 <li class="first active">
-                    <a href="#!/users" style="height: 40px">Users</a>
+                    <a href="#!/users" style="height: 40px; cursor:pointer">Users</a>
                 </li>
                 <li class="first active">
-                    <a href="#!/vendors" style="height: 40px">Vendors</a>
+                    <a href="#!/vendors" style="height: 40px; cursor:pointer">Vendors</a>
                 </li>
             </ul>
         </div>
@@ -32,7 +32,10 @@
     <!--<a style="cursor:pointer;"href="#!/adminProfile">ADMIN PROFILE</a>-->
     <!--</li>-->
     <li>
-        <a style="cursor:pointer;" href="#!/manageUser" class="">Log Out</a>
+        <a style="cursor:pointer;" href="#!/manageUser" class="">LOG OUT</a>
+    </li>
+    <li>
+        <a style="cursor:pointer;" href="#!/users" class="">DASHBOARD</a>
     </li>
     <li>
         <a style="cursor:pointer;" href="#!/addUser" class="">ADD USER</a>
@@ -43,120 +46,29 @@
 
 
 
-    <!--  <li>
-         <a>BLOCK USER</a>
-     </li>
-     <li>
-         <a> CREATE REPORT</a>
-     </li>  -->
+
 </ul>
-<!--<div class="wrapper">-->
-    <!--<div class="col_third">-->
-        <!--<div class="hover panel">-->
-            <!--<div class="front">-->
-                <!--<div class="box1">-->
-                    <!--<p>Total Users</p>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="back">-->
-                <!--<div class="box2">-->
-                    <!--<p>1000</p>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
 
-    <!--<div class="col_third">-->
-        <!--<div class="hover panel">-->
-            <!--<div class="front">-->
-                <!--<div class="box1">-->
-                    <!--<p>Personal Users</p>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="back">-->
-                <!--<div class="box2">-->
-                    <!--<p>500</p>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="nav nav-tabs nav-tabs-inverse nav-justified nav-justified-mobile" data-sortable-id="index-2" style="color: blue">
 
-    <!--<div class="col_third end">-->
-        <!--<div class="hover panel">-->
-            <!--<div class="front">-->
-                <!--<div class="box1">-->
-                    <!--<p>Business Users</p>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="back">-->
-                <!--<div class="box2">-->
-                    <!--<p>500</p>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
-    <!--<div class="col_third">-->
-        <!--<div class="hover panel">-->
-            <!--<div class="front">-->
-                <!--<div class="box1">-->
-                    <!--<p>Total Winners</p>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="back">-->
-                <!--<div class="box2">-->
-                    <!--<p>50</p>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
-    <!--<div class="col_third">-->
-        <!--<div class="hover panel">-->
-            <!--<div class="front">-->
-                <!--<div class="box1">-->
-                    <!--<p>Cash Winners</p>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="back">-->
-                <!--<div class="box2">-->
-                    <!--<p>15</p>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
-    <!--<div class="col_third end">-->
-        <!--<div class="hover panel">-->
-            <!--<div class="front">-->
-                <!--<div class="box1">-->
-                    <!--<p>Coupon Winners</p>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="back">-->
-                <!--<div class="box2">-->
-                    <!--<p>35</p>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
-    <!--<div class="col_third ">-->
-        <!--<div class="hover panel">-->
-            <!--<div class="front">-->
-                <!--<div class="box1">-->
-                    <!--<p>Block Users</p>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="back">-->
-                <!--<div class="box2">-->
-                    <!--<p>5</p>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
-<br><div style="clear: both"></div>
+<li>
+            <div class="hover panel" style="background-color: black; color: #ffffff; width: 160px; height: 120px">
+        <p>Total Users: {{total_users || "0"}}</p>
+    </div>
+</li>
+                <li>
+    <div class="hover panel" style="background-color: black; color: #ffffff; width: 160px; height: 120px">
+        <p>Blocked Users: {{blocked_users || "0"}}</p>
+    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<br>
 
 <input type="text" ng-model="strSearch.firstname" placeholder="Search By Name">
 <input type="text" ng-model="strSearch.region" placeholder="Search By Region">
@@ -174,7 +86,7 @@
 
 
     </tr>
-    <tr ng-repeat="user in users|filter:strSearch track by $index">
+    <tr dir-paginate="user in users|itemsPerPage:8|filter:strSearch track by $index">
         <td>{{user.firstname}}</td>
         <td>{{user.lastname}}</td>
         <td>{{user.email}}</td>
@@ -189,7 +101,9 @@
 
     </tr>
 </table>
-
+<dir-pagination-controls  max-size="5"
+                          direction-links="true"
+                          boundary-links="true"></dir-pagination-controls>
 
 
 
@@ -197,7 +111,7 @@
 <div id="confirmation" role="dialog" class="modal fade" data-backdrop="false">
     <div class="modal-dialog">
         <div class="modal-content" style="font-size: 15px">
-            <div style="background-color: greenyellow;height: 30px"></div>
+            <div style="background-color: black;height: 30px"></div>
             <h1 class="modal-title" style="font-size: 17px;margin-top: 10px">Are you sure to perform this action?</h1>
 
             <div class="modal-body">
@@ -219,7 +133,7 @@
     <div class="modal-dialog">
         <div class="modal-content" style="font-size: 15px">
             <div class="modal-content" style="font-size: 15px">
-                <div style="background-color: lightgreen;height: 30px"></div>
+                <div style="background-color: black;height: 30px"></div>
 
                 <h1 class="modal-title" style="font-size: 17px">Edit User Details</h1>
 

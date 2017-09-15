@@ -37,7 +37,12 @@ p { color: #ffffff;  }
 /* Flip Panel */
 /*-=-=-=-=-=-=-=-=-=-=- */
 
-.wrapper{ width: 980px; margin: 0 auto; hoverflow: hidden; }
+.wrapper{ width: 980px; margin: auto; hoverflow: hidden; }
+
+.data {
+    font-size: 10px;
+    font-weight: bold;
+}
 
 .panel {
     margin: 0 auto;

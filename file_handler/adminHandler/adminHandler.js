@@ -9,12 +9,12 @@ module.exports= {
 
 
         if (password === undefined || !/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/.test(password)) {
-            common_js_functions.responseHandler(req, response, "Please enter last name between 3-30 characters only")
+            common_js_functions.responseHandler(req, res, "Password should contain minimum eight characters, at least one letter, one number and one special character")
             return;
         }
 
         if (email === undefined || !/\S+@\S+\.\S+/.test(email)) {
-            common_js_functions.responseHandler(req, response, "Please enter valid email including @ symbol")
+            common_js_functions.responseHandler(req, res, "Please enter valid email including @ symbol")
             return;
         }
 
@@ -62,6 +62,7 @@ module.exports= {
             }
             else {
                 if (password === result.password) {
+
                             res.status(200).json({
                             responseCode: 200,
                             responseMessage: 'User has succesfully login',

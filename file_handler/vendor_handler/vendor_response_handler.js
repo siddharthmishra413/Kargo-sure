@@ -3,7 +3,7 @@ let common_js_functions = require('../common_files/js/js_functions')
 
 module.exports = {
     addVendor: (req, response) => {
-        let vendorName  = req.body.vendorName;
+        let vendorName = req.body.vendorName;
         let email = req.body.email;
         let country = req.body.country;
         let state = req.body.state;
@@ -14,18 +14,18 @@ module.exports = {
             common_js_functions.responseHandler(req, response, "Please enter first name between 3-30 characters only")
             return;
         }
-        
+
         if (email === undefined || !/\S+@\S+\.\S+/.test(email)) {
             common_js_functions.responseHandler(req, response, "Please enter valid email including @ symbol")
             return;
 
         }
-        
+
         if (telephone_no === undefined || !/^[0-9]{10,14}$/.test(telephone_no)) {
             common_js_functions.responseHandler(req, response, "Only numeric value is allowed(10-14 digits only)")
             return;
         }
-        
+
         if (region === undefined || !['north', 'south', 'east', 'west'].includes(region)) {
             common_js_functions.responseHandler(req, response, "Please enter the your region(north,south,east,west)")
             return;
@@ -39,7 +39,7 @@ module.exports = {
                 state: state,
             },
             telephone_no: telephone_no,
-            region:region
+            region: region
         });
 
         vendor.save((err, succees) => {
@@ -80,12 +80,12 @@ module.exports = {
         if (vendorName !== undefined && /^[A-Za-z]{2,20}$/.test(vendorName)) {
             setValue.vendorName = vendorName
         }
-        
+
         if (email !== undefined && /\S+@\S+\.\S+/.test(email)) {
 
             common_js_functions.responseHandler(req, res, "Email cannot be altered");
         }
-        
+
         if (country !== undefined) {
             setValue.address.country = country
         }
@@ -95,7 +95,7 @@ module.exports = {
         if (telephone_no !== undefined && /^[0-9]{10,14}$/.test(telephone_no)) {
             setValue.telephone_no = telephone_no
         }
-        
+
         if (region !== undefined && ['north', 'south', 'east', 'west'].includes(region)) {
             setValue.region = region
         }
@@ -175,7 +175,7 @@ module.exports = {
                 else {
                     if (success.blocked) {
                         Vendor.findOneAndUpdate({email: emailCriteria}, {blocked: false}, {new: true}, (err, succeed) => {
-                            if(err) {
+                            if (err) {
                                 console.log(err);
                                 res.status(400).send({
                                     "responseCode": 400,
@@ -196,7 +196,7 @@ module.exports = {
                     else {
                         Vendor.findOneAndUpdate({email: emailCriteria}, {blocked: true}, {new: true}, (err, succeed) => {
 
-                            if(err) {
+                            if (err) {
                                 console.log(err);
                                 res.status(400).send({
                                     "responseCode": 400,
@@ -219,17 +219,67 @@ module.exports = {
 
             }
         })
+    },
 
+
+    getVendorData: (req, res) => {
+        let blocked = req.query.blocked;
+        if (blocked == 1) {
+            console.log("hohh")
+            Vendor.aggregate({
+                    $match: {
+                        blocked: true
+                    }
+                },
+                {
+                    $group: {
+                        _id: null,
+                        count: {$sum: 1}
+                    }
+                }, (err, success) => {
+                    if (err) {
+                        console.log(err);
+                        res.status(400).send({
+                            "responseCode": 400,
+                            "responseMessage": "Unsuccessful",
+                            "response": err.message
+                        });
+                    }
+                    else {
+                        console.log("**************", success);
+                        res.status(200).send({
+                            "responseCode": 200,
+                            "responseMessage": "Successful",
+                            "response": success
+                        });
+                    }
+                })
+        }
+        else {
+            Vendor.aggregate(
+                {
+                    $group: {
+                        _id: null,
+                        count: {$sum: 1}
+                    }
+                }, (err, success) => {
+                    if (err) {
+                        console.log(err);
+                        res.status(400).send({
+                            "responseCode": 400,
+                            "responseMessage": "Unsuccessful",
+                            "response": err.message
+                        });
+                    }
+                    else {
+                        console.log("**************", success);
+                        res.status(200).send({
+                            "responseCode": 200,
+                            "responseMessage": "Successful",
+                            "response": success
+                        });
+                    }
+                })
+        }
     }
-
-
-    // createReport: (req, res) => {
-    //
-    //     require("jsreport").render("<h1>Hello world</h1>").then(function (out) {
-    //         //pipe pdf with "Hello World"
-    //         console.log(out)
-    //         res.set('Content-type', 'application/pdf');
-    //         res.send(out.content)
-    //     });
-    // }
 };

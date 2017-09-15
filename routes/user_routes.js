@@ -29,6 +29,8 @@ routes.post('/blockUser',user_response_handler.blockUser);
 
 routes.get('/getUsers',user_response_handler.getUsers);
 
+routes.get('/getUserData',user_response_handler.getUserData);
+
 // routes.get('/createReport',user_response_handler.createReport);
 
 

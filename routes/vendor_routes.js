@@ -29,6 +29,8 @@ routes.post('/blockVendor',vendor_response_handler.blockVendor);
 
 routes.get('/getVendors',vendor_response_handler.getVendors);
 
+routes.get('/getVendorData',vendor_response_handler.getVendorData);
+
 // routes.get('/createReport',vendor_response_handler.createReport);
 
 

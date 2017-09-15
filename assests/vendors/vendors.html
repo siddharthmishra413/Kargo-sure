@@ -4,10 +4,10 @@
             <ul class="nav nav-tabs nav-tabs-inverse nav-justified nav-justified-mobile" data-sortable-id="index-2" style="color: blue">
                 <!-- <li class="first" ng-class="{'active':header=='Manage User'}" ng-if="user.indexOf('ManageUser')>-1"><a ng-href="#header/manageUsers">Manage Users</a> -->
                 <li class="first active">
-                    <a href="#!/users" style="height: 40px">Users</a>
+                    <a href="#!/users" style="height: 40px; cursor:pointer">Users</a>
                 </li>
                 <li class="first active">
-                    <a href="#!/vendors" style="height: 40px">Vendors</a>
+                    <a href="#!/vendors" style="height: 40px; cursor:pointer">Vendors</a>
                 </li>
             </ul>
         </div>
@@ -32,7 +32,10 @@
     <!--<a style="cursor:pointer;"href="#!/adminProfile">ADMIN PROFILE</a>-->
     <!--</li>-->
     <li>
-        <a style="cursor:pointer;" href="#!/manageUser" class="">Log Out</a>
+        <a style="cursor:pointer;" href="#!/manageUser" class="">LOG OUT</a>
+    </li>
+    <li>
+        <a style="cursor:pointer;" href="#!/users" class="">DASHBOARD</a>
     </li>
     <li>
         <a style="cursor:pointer;" href="#!/addUser" class="">ADD USER</a>
@@ -49,6 +52,26 @@
          <a> CREATE REPORT</a>
      </li>  -->
 </ul>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="nav nav-tabs nav-tabs-inverse nav-justified nav-justified-mobile" data-sortable-id="index-2" style="color: blue">
+
+                <li>
+                    <div class="hover panel" style="background-color: black; color: #ffffff; width: 180px; height: 120px">
+                        <p>Total Vendor: {{total_vendors || "0"}}</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="hover panel" style="background-color: black; color: #ffffff; width: 180px; height: 120px">
+                        <p>Blocked Vendor: {{blocked_vendors || "0"}}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 <br><div style="clear: both"></div>
 
 <input type="text" ng-model="strSearch.vendorName" placeholder="Search By Vendors Name">
@@ -67,7 +90,7 @@
 
 
     </tr>
-    <tr ng-repeat="vendor in vendors|filter:strSearch track by $index">
+    <tr dir-paginate="vendor in vendors|itemsPerPage:1|filter:strSearch track by $index">
         <td>{{vendor.vendorName}}</td>
         <td>{{vendor.email}}</td>
         <td>{{vendor.telephone_no}}</td>
@@ -81,6 +104,9 @@
 
     </tr>
 </table>
+<dir-pagination-controls  max-size="5"
+                          direction-links="true"
+                          boundary-links="true"></dir-pagination-controls>
 
 
 
@@ -89,7 +115,7 @@
 <div id="confirmation" role="dialog" class="modal fade" data-backdrop="false">
     <div class="modal-dialog">
         <div class="modal-content" style="font-size: 15px">
-            <div style="background-color: greenyellow;height: 30px"></div>
+            <div style="background-color: black;height: 30px"></div>
             <h1 class="modal-title" style="font-size: 17px;margin-top: 10px">Are you sure to perform this action?</h1>
 
             <div class="modal-body">
@@ -111,7 +137,7 @@
     <div class="modal-dialog">
         <div class="modal-content" style="font-size: 15px">
             <div class="modal-content" style="font-size: 15px">
-                <div style="background-color: lightgreen;height: 30px"></div>
+                <div style="background-color: black;height: 30px"></div>
 
                 <h1 class="modal-title" style="font-size: 17px">Edit Vendor Details</h1>
 

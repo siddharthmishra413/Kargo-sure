@@ -15,7 +15,7 @@ app.controller('loginCtrl',function ($scope,dataService,$location,$rootScope) {
             .catch(function (response) {
                 console.log(response);
                 $location.path('/login');
-                alert(response.message)
+                alert("Password or Id did not match")
             })
 
     }

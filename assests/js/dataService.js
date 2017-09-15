@@ -12,6 +12,13 @@ angular.module('myApp').service('dataService', function ($q, $http) {
         return httpCall('GET',baseUrl+"getUsers");
     };
 
+     self.getTotalUsers=function () {
+            return httpCall('GET',baseUrl+"getUserData");
+        };
+self.getBLockedUsers=function () {
+        return httpCall('GET',baseUrl+"getUserData?blocked=1");
+    };
+
     self.blockUser=function (data) {
         console.log("999999999",data)
         return httpCall('POST',baseUrl+"blockUser",data)
@@ -30,6 +37,14 @@ angular.module('myApp').service('dataService', function ($q, $http) {
 
     self.getVendors=function () {
             return httpCall('GET',baseUrl+"getVendors");
+        };
+
+self.getTotalVendors=function () {
+            return httpCall('GET',baseUrl+"getVendorData");
+        };
+
+self.getBLockedVendors=function () {
+            return httpCall('GET',baseUrl+"getVendorData?blocked=1");
         };
 
         self.blockVendor=function (data) {
@@ -66,6 +81,9 @@ angular.module('myApp').service('dataService', function ($q, $http) {
     self.login=function (data) {
                 return httpCall('POST',baseUrl+"login",data);
                 }
+                self.registerAdmin=function (data) {
+                                return httpCall('POST',baseUrl+"addAdmin",data);
+                                }
 
     function httpCall(method, url, data) {
         return $q(function (resolve, reject) {

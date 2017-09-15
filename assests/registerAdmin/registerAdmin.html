@@ -1,0 +1,29 @@
+<div style="width: 800px; height: 470px; margin-left: 350px" >
+    <h3>Admin Registeration</h3>
+
+    <form name="registerAdmin" autocomplete="off" style="font-size: 15px; margin-top: 150px">
+        <div class="form-group">
+            Email
+            <input type="text" name="email" required ng-model="obj.email" ng-pattern="/\S+@\S+\.\S+/" class="form-control">
+            <span
+                    ng-show='registerAdmin.email.$dirty&&registerAdmin.email.$invalid||registerAdmin.email.$dirty&&registerAdmin.email.$error.pattern'>
+        Please enter valid email, (eg: anything@anything.domain)
+
+  </span>
+
+        </div>
+        <div class="form-group">
+            Password
+            <input type="Password" name="fname" required ng-model="obj.password" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/"
+                   class="form-control">
+            <span
+                    ng-show='registerAdmin.fname.$dirty&&registerAdmin.fname.$invalid||registerAdmin.fname.$dirty&&registerAdmin.fname.$error.pattern'>
+       Password should contain minimum eight characters, at least one letter, one number and one special character
+
+  </span>
+        </div>
+
+        <input type="submit" ng-disabled="registerAdmin.$invalid" ng-click="add(obj)" data-dismiss="modal" value="Register Admin">
+
+    </form>
+</div>

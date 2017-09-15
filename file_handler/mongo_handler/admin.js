@@ -8,7 +8,7 @@ const Admin = new Schema({
     password: {
         type: String,
         required: [true, 'Please enter the last name'],
-        match: [/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/, 'Password should contain minimum eight characters, at least one letter, one number and one special character:'],
+        match: [/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/, 'Password should contain minimum eight characters, at least one letter, one number and one special character'],
         trim: true
     },
     email: {

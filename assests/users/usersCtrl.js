@@ -49,6 +49,7 @@ app.controller('usersCtrl',function ($scope,dataService,$document) {
             })
     };
 
+
     $scope.saveUser=function (user) {
         saveData=user
     }
@@ -56,6 +57,8 @@ app.controller('usersCtrl',function ($scope,dataService,$document) {
         getData()
     })
     function getData() {
+
+
         dataService.getUsers().then(function (response) {
 
             console.log(response.data.response);
@@ -75,6 +78,24 @@ app.controller('usersCtrl',function ($scope,dataService,$document) {
 
         }).catch(function (error) {
             console.log(error);
+        })
+
+        dataService.getTotalUsers().then(function (response) {
+            console.log(response)
+            $scope.total_users=response.data.response[0].count;
+            console.log($scope.total_users);
+
+        }).catch(function (response) {
+            console.log(response)
+        })
+
+        dataService.getBLockedUsers().then(function (response) {
+            console.log(response)
+            $scope.blocked_users=response.data.response[0].count;
+            console.log($scope.blocked_users);
+
+        }).catch(function (response) {
+            console.log(response)
         })
     }
 

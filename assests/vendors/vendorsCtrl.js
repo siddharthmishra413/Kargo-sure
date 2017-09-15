@@ -77,6 +77,24 @@ app.controller('vendorsCtrl',function ($scope,dataService,$document) {
         }).catch(function (error) {
             console.log(error);
         })
+
+        dataService.getTotalVendors().then(function (response) {
+            console.log(response)
+            $scope.total_vendors=response.data.response[0].count;
+            console.log($scope.total_vendors);
+
+        }).catch(function (response) {
+            console.log(response)
+        })
+
+        dataService.getBLockedVendors().then(function (response) {
+            console.log(response)
+            $scope.blocked_vendors=response.data.response[0].count;
+            console.log("sid",$scope.blocked_vendors);
+
+        }).catch(function (response) {
+            console.log(response)
+        })
     }
 
 });

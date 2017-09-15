@@ -35,6 +35,10 @@ app.config(['$locationProvider', '$routeProvider', function ($locationProvider, 
             templateUrl: 'addVendor/addVendor.html',
             controller: 'addVendorCtrl'
         })
+        .when('/registerAdmin', {
+            templateUrl: 'registerAdmin/registerAdmin.html',
+            controller: 'registerAdminCtrl'
+        })
         .when('/addUser', {
             templateUrl: 'addUser/addUser.html',
             controller: 'addUserCtrl'
