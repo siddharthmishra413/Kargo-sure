@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="295c594d-668e-4ac5-9ef4-5436a0cd779a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assests/addUser/addUser.html" afterPath="$PROJECT_DIR$/assests/addUser/addUser.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assests/addVendor/addVendor.html" afterPath="$PROJECT_DIR$/assests/addVendor/addVendor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assests/app.js" afterPath="$PROJECT_DIR$/assests/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assests/css/style.css" afterPath="$PROJECT_DIR$/assests/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assests/index.html" afterPath="$PROJECT_DIR$/assests/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assests/js/dataService.js" afterPath="$PROJECT_DIR$/assests/js/dataService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assests/login/login.html" afterPath="$PROJECT_DIR$/assests/login/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assests/login/loginCtrl.js" afterPath="$PROJECT_DIR$/assests/login/loginCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assests/manageUsers/manageUsers.html" afterPath="$PROJECT_DIR$/assests/manageUsers/manageUsers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assests/users/users.html" afterPath="$PROJECT_DIR$/assests/users/users.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assests/users/usersCtrl.js" afterPath="$PROJECT_DIR$/assests/users/usersCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assests/vendors/vendors.html" afterPath="$PROJECT_DIR$/assests/vendors/vendors.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assests/vendors/vendorsCtrl.js" afterPath="$PROJECT_DIR$/assests/vendors/vendorsCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file_handler/adminHandler/adminHandler.js" afterPath="$PROJECT_DIR$/file_handler/adminHandler/adminHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file_handler/config/config_dev.js" afterPath="$PROJECT_DIR$/file_handler/config/config_dev.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file_handler/mongo_handler/admin.js" afterPath="$PROJECT_DIR$/file_handler/mongo_handler/admin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file_handler/user_handler/user_response_handler.js" afterPath="$PROJECT_DIR$/file_handler/user_handler/user_response_handler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file_handler/vendor_handler/vendor_response_handler.js" afterPath="$PROJECT_DIR$/file_handler/vendor_handler/vendor_response_handler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/user_routes.js" afterPath="$PROJECT_DIR$/routes/user_routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/vendor_routes.js" afterPath="$PROJECT_DIR$/routes/vendor_routes.js" />
-    </list>
+    <list default="true" id="295c594d-668e-4ac5-9ef4-5436a0cd779a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -303,12 +281,12 @@
       <workItem from="1504937347229" duration="21534000" />
       <workItem from="1505376799337" duration="9170000" />
       <workItem from="1505390451029" duration="5407000" />
-      <workItem from="1505450905573" duration="19538000" />
+      <workItem from="1505450905573" duration="19641000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55649000" />
+    <option name="totallyTimeSpent" value="55752000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
